@@ -1,0 +1,18 @@
+<!-- constructor injection -->
+<bean id="classB" class="com.example.demo.components.B" />
+<bean id="classA" class="com.example.demo.components.A">
+    <constructor-arg ref="classB"/>
+</bean>
+
+<!-- setter injection -->
+<bean id="classB" class="com.example.demo.components.B" />
+<bean id="classA" class="com.example.demo.components.A">
+    <property name="b">
+        <ref bean="classB" />
+    </property>
+</bean>
+
+<!-- init and detroy of bean -->
+
+<bean id="testClass" class="com.example.demo.components.Test" init-method="init" destroy-method="destroy" />
+<bean id="testClass" class="com.example.demo.components.Test"/>
